@@ -1,0 +1,86 @@
+package org.brewchain.bcapi.backend;
+
+import java.util.concurrent.Future;
+
+import org.brewchain.bcapi.gens.Odb.OKey;
+import org.brewchain.bcapi.gens.Odb.OValue;
+
+import lombok.Data;
+import onight.tfw.ojpa.api.DomainDaoSupport;
+import onight.tfw.ojpa.api.ServiceSpec;
+
+@Data
+public  class ODBDao implements ODBSupport {
+
+	protected ServiceSpec serviceSpec;
+
+	protected ODBSupport daosupport;
+
+	protected String domainName;
+
+	public ODBDao(ServiceSpec serviceSpec) {
+		this.serviceSpec = serviceSpec;
+	}
+
+	private Class domainClazz = String.class;
+	private Class exampleClazz = Object.class;
+	private Class keyClazz = Object.class;
+
+	@Override
+	public Future<OValue> put(OKey key, OValue value) throws ODBException {
+		return daosupport.put(key, value);
+	}
+	@Override
+	public Future<String> putInfo(String key, String value) throws ODBException {
+		return daosupport.putInfo(key, value);
+	}
+	@Override
+	public Future<byte[]> putData(String key, byte[] value) throws ODBException {
+		return daosupport.putData(key, value);
+	}
+	@Override
+	public Future<OValue[]> batchPuts(OKey[] key, OValue[] value) throws ODBException {
+		return daosupport.batchPuts(key, value);
+	}
+	@Override
+	public Future<OValue> compareAndSwap(OKey key, OValue value, OValue compareValue) throws ODBException {
+		return daosupport.compareAndSwap(key, value, compareValue);
+	}
+	@Override
+	public Future<OValue[]> batchCompareAndSwap(OKey[] key, OValue[] value, OValue[] compareValue) throws ODBException {
+		return daosupport.batchCompareAndSwap(key, value, compareValue);
+	}
+	@Override
+	public Future<OValue> compareAndDelete(OKey key, OValue compareValue) throws ODBException {
+		return daosupport.compareAndDelete(key, compareValue);
+	}
+	@Override
+	public Future<OValue[]> batchCompareAndDelete(OKey[] key, OValue[] compareValue) throws ODBException {
+		return daosupport.batchCompareAndDelete(key, compareValue);
+	}
+	@Override
+	public Future<OValue> delete(OKey key) throws ODBException {
+		return daosupport.delete(key);
+	}
+	@Override
+	public Future<OValue[]> batchDelete(OKey[] key) throws ODBException {
+		return daosupport.batchDelete(key);
+	}
+	@Override
+	public Future<OValue> get(OKey key) throws ODBException {
+		return daosupport.get(key);
+	}
+	@Override
+	public Future<OValue[]> list(OKey[] key) throws ODBException {
+		return daosupport.list(key);
+	}
+	@Override
+	public void sync() throws ODBException {
+		daosupport.sync();
+	}
+	@Override
+	public void setDaosupport(DomainDaoSupport dds) {
+		this.daosupport = (ODBSupport)dds;
+	}
+
+}
