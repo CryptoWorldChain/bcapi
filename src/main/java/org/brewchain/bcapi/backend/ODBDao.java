@@ -82,5 +82,9 @@ public  class ODBDao implements ODBSupport {
 	public void setDaosupport(DomainDaoSupport dds) {
 		this.daosupport = (ODBSupport)dds;
 	}
+	@Override
+	public Future<OValue> get(String key) throws ODBException {
+		return daosupport.get(key);
+	}
 
 }
