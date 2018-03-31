@@ -3,7 +3,6 @@ package org.fc.brewchain.bcapi;
 import com.google.protobuf.Message;
 import com.google.protobuf.MessageOrBuilder;
 
-import onight.tfw.otransio.api.PackHeader;
 import onight.tfw.otransio.api.beans.ExtHeader;
 import onight.tfw.otransio.api.beans.FixHeader;
 import onight.tfw.otransio.api.beans.FramePacket;
@@ -20,7 +19,7 @@ public class BCPacket extends FramePacket {
 		return new BCExtHeader();
 	}
 
-	public static BCPacket buildSyncFrom(MessageOrBuilder body, String cmd, String module) {
+	public static BCPacket buildSyncFrom(Message body, String cmd, String module) {
 		BCPacket ret = new BCPacket();
 		ret.setFbody(body);
 		FixHeader fh = new FixHeader();
@@ -32,7 +31,7 @@ public class BCPacket extends FramePacket {
 		ret.setFixHead(fh);
 		return ret;
 	}
-	public static BCPacket buildAsyncFrom(MessageOrBuilder body, String cmd, String module) {
+	public static BCPacket buildAsyncFrom(Message body, String cmd, String module) {
 		BCPacket ret = buildSyncFrom(body,cmd,module);
 		ret.getFixHead().setSync(false);
 		return ret;
