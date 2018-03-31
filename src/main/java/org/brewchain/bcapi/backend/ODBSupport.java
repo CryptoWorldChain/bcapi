@@ -24,6 +24,7 @@ public interface ODBSupport extends DomainDaoSupport{
 	 * @throws ODBException
 	 */
 	Future<OValue> put(OKey key, OValue value) throws ODBException;
+	Future<OValue> put(String key, OValue value) throws ODBException;
 
 
 	// only for string

@@ -86,5 +86,9 @@ public  class ODBDao implements ODBSupport {
 	public Future<OValue> get(String key) throws ODBException {
 		return daosupport.get(key);
 	}
+	@Override
+	public Future<OValue> put(String key, OValue value) throws ODBException {
+		return daosupport.put(key, value);
+	}
 
 }
