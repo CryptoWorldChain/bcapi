@@ -5,8 +5,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
 
 import org.apache.commons.lang3.concurrent.ConcurrentUtils;
-import org.brewchain.bcapi.gens.Odb.OKey;
-import org.brewchain.bcapi.gens.Odb.OValue;
+import org.brewchain.bcapi.gens.Oentity.OKey;
+import org.brewchain.bcapi.gens.Oentity.OValue;
 
 import com.google.protobuf.ByteString;
 
@@ -131,7 +131,7 @@ public class SimpleMemoryDBSupport extends ODBDao {
 				OValue.newBuilder().setInfo(value).build());
 		return ConcurrentUtils.constantFuture(value);
 	}
-
+ 
 	@Override
 	public Future<byte[]> putData(String key, byte[] value) throws ODBException {
 		storage.put(OKey.newBuilder().setData(ByteString.copyFrom(key.getBytes())).build(),

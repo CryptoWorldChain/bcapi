@@ -1,6 +1,6 @@
 package org.brewchain.bcapi.backend;
 
-import org.brewchain.bcapi.gens.Odb.OValue;
+import org.brewchain.bcapi.gens.Oentity.OValue;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 

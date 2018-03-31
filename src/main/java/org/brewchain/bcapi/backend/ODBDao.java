@@ -1,9 +1,10 @@
 package org.brewchain.bcapi.backend;
 
+import java.util.List;
 import java.util.concurrent.Future;
 
-import org.brewchain.bcapi.gens.Odb.OKey;
-import org.brewchain.bcapi.gens.Odb.OValue;
+import org.brewchain.bcapi.gens.Oentity.OKey;
+import org.brewchain.bcapi.gens.Oentity.OValue;
 
 import lombok.Data;
 import onight.tfw.ojpa.api.DomainDaoSupport;
@@ -89,6 +90,10 @@ public  class ODBDao implements ODBSupport {
 	@Override
 	public Future<OValue> put(String key, OValue value) throws ODBException {
 		return daosupport.put(key, value);
+	}
+	@Override
+	public Future<List<OValue>> listBySecondKey(String secondKey) throws ODBException {
+		return daosupport.listBySecondKey(secondKey);
 	}
 
 }
