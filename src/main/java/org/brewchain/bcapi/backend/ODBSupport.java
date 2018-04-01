@@ -3,6 +3,7 @@ package org.brewchain.bcapi.backend;
 import java.util.concurrent.Future;
 
 import org.brewchain.bcapi.gens.Oentity.OKey;
+import org.brewchain.bcapi.gens.Oentity.OPair;
 import org.brewchain.bcapi.gens.Oentity.OValue;
 
 import onight.tfw.ojpa.api.DomainDaoSupport;
@@ -120,7 +121,7 @@ public interface ODBSupport extends DomainDaoSupport{
 	/** 
 	 * 
 	 */
-	Future<java.util.List<OValue>> listBySecondKey(String secondKey) throws ODBException;
+	Future<java.util.List<OPair>> listBySecondKey(String secondKey) throws ODBException;
 
 	/**
 	 * 批量获取

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.concurrent.Future;
 
 import org.brewchain.bcapi.gens.Oentity.OKey;
+import org.brewchain.bcapi.gens.Oentity.OPair;
 import org.brewchain.bcapi.gens.Oentity.OValue;
 
 import lombok.Data;
@@ -92,7 +93,7 @@ public  class ODBDao implements ODBSupport {
 		return daosupport.put(key, value);
 	}
 	@Override
-	public Future<List<OValue>> listBySecondKey(String secondKey) throws ODBException {
+	public Future<List<OPair>> listBySecondKey(String secondKey) throws ODBException {
 		return daosupport.listBySecondKey(secondKey);
 	}
 
