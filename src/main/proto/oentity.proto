@@ -14,7 +14,7 @@ message OValue{
 	bytes extdata = 4;
 	
 	string second_key = 5;//二级索引
-	
+	int32 nonce = 6;
 }
 
 message OPair{
