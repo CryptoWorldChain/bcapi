@@ -122,6 +122,12 @@ public interface ODBSupport extends DomainDaoSupport{
 	 * 
 	 */
 	Future<java.util.List<OPair>> listBySecondKey(String secondKey) throws ODBException;
+	
+	/** 
+	 * 
+	 */
+	Future<java.util.List<OPair>> putBySecondKey(String secondKey, OValue[] values) throws ODBException;
+	
 
 	/**
 	 * 批量获取
