@@ -102,6 +102,6 @@ public  class ODBDao implements ODBSupport {
 	}
 	@Override
 	public Future<List<OPair>> removeBySecondKey(String secondKey, OKey[] keys) throws ODBException {
-		return daosupport.removeBySecondKey(secondKey, values);
+		return daosupport.removeBySecondKey(secondKey, keys);
 	}
 }
