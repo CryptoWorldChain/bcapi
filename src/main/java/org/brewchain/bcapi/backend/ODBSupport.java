@@ -119,14 +119,19 @@ public interface ODBSupport extends DomainDaoSupport{
 
 
 	/** 
-	 * 
+	 * 查询二级索引
 	 */
 	Future<java.util.List<OPair>> listBySecondKey(String secondKey) throws ODBException;
 	
 	/** 
-	 * 
+	 * 插入二级索引
 	 */
 	Future<java.util.List<OPair>> putBySecondKey(String secondKey, OValue[] values) throws ODBException;
+	
+	/** 
+	 * 从二级索引移除项
+	 */
+	Future<java.util.List<OPair>> removeBySecondKey(String secondKey, OValue[] values) throws ODBException;
 	
 
 	/**
