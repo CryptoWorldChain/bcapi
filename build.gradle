@@ -4,7 +4,7 @@ buildscript {
 		classpath "onight.osgi:zpp-gradle:3.0.0"
 	 }
 }
-version = '3.2.6'
+version = '3.2.7'
 
 repositories{
 	maven{ url "http://dl.bintray.com/ethereum/maven/"}
