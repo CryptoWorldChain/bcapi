@@ -101,7 +101,7 @@ public  class ODBDao implements ODBSupport {
 		return daosupport.putBySecondKey(secondKey, values);
 	}
 	@Override
-	public Future<List<OPair>> removeBySecondKey(String secondKey, OValue[] values) throws ODBException {
-		return daosupport.removeBySecondKey(secondKey, values);
+	public Future<List<OPair>> removeBySecondKey(String secondKey, OKey[] keys) throws ODBException {
+		return daosupport.removeBySecondKey(secondKey, keys);
 	}
 }

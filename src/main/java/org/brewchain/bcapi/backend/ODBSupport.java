@@ -131,7 +131,7 @@ public interface ODBSupport extends DomainDaoSupport{
 	/** 
 	 * 从二级索引移除项
 	 */
-	Future<java.util.List<OPair>> removeBySecondKey(String secondKey, OValue[] values) throws ODBException;
+	Future<java.util.List<OPair>> removeBySecondKey(String secondKey, OKey[] keys) throws ODBException;
 	
 
 	/**
