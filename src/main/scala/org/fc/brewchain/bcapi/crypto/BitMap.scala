@@ -82,12 +82,13 @@ object BitMap {
     println("biequal::" + StringUtils.equalsIgnoreCase(bi.toString(16), hexstr) + ":len=" + hexstr.length() + "==>" + bi.bitCount())
     val bix = hexToMapping(bi);
     println("bix::" + bix);
-    val bistr = mapToBigInt("to");
+    val bistr = mapToBigInt("rcsiHZXq2BzAS86xBKwhdJsiK5pzRSggZgKLoqj");
     println("bistr=" + bistr.toString(16));
     println("biequal::" + StringUtils.equals(bistr.toString(16), (hexstr)) + ":len=" + hexstr.length())
 
     val bihexstr = mapToBigInt(hexstr);
     println("bihexstr=" + bihexstr.toString(16) + ",bitcount=" + bihexstr.bitCount);
+    
 
   }
 }

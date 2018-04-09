@@ -31,6 +31,26 @@ public class BCPacket extends FramePacket {
 		ret.setFixHead(fh);
 		return ret;
 	}
+	
+	public static BCPacket buildSyncFrom(byte[] body, String cmd, String module) {
+		BCPacket ret = new BCPacket();
+		ret.setBody(body);
+		FixHeader fh = new FixHeader();
+		fh.setCmd(cmd);
+		fh.setVer('b');
+		fh.setSync(true);
+		fh.setModule(module);
+		fh.setEnctype(SerializerFactory.SERIALIZER_PROTOBUF);
+		ret.setFixHead(fh);
+		return ret;
+	}
+	
+	public static BCPacket buildAsyncFrom(byte[] body, String cmd, String module) {
+		BCPacket ret = buildSyncFrom(body,cmd,module);
+		ret.getFixHead().setSync(false);
+		return ret;
+	}
+	
 	public static BCPacket buildAsyncFrom(Message body, String cmd, String module) {
 		BCPacket ret = buildSyncFrom(body,cmd,module);
 		ret.getFixHead().setSync(false);
