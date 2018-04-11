@@ -3,7 +3,7 @@ package org.fc.brewchain.bcapi.crypto
 import java.math.BigInteger
 import org.apache.commons.lang3.StringUtils
 import java.security.SecureRandom
-import org.ethereum.crypto.ECKey
+import org.brewchain.core.crypto.ECKey
 import org.spongycastle.util.encoders.Hex
 
 object BitMap {

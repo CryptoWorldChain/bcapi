@@ -1,10 +1,10 @@
 package org.fc.brewchain.bcapi.crypto
 
 import java.security.SecureRandom
-import org.ethereum.crypto.ECKey
+import org.brewchain.core.crypto.ECKey
 import org.spongycastle.util.encoders.Hex
 import onight.tfw.outils.serialize.SessionIDGenerator
-import org.ethereum.crypto.HashUtil
+import org.brewchain.core.crypto.HashUtil
 import org.fc.brewchain.bcapi.crypto.BitMap
 import scala.BigInt
 import scala.math.BigInt.int2bigInt

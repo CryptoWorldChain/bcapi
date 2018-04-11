@@ -1,10 +1,10 @@
 package org.fc.brewchain.bcapi.crypto
 
 import java.security.SecureRandom
-import org.ethereum.crypto.ECKey
 import org.spongycastle.util.encoders.Hex
 import lombok.extern.slf4j.Slf4j
-import org.ethereum.crypto.HashUtil
+import org.brewchain.core.crypto.ECKey
+import org.brewchain.core.crypto.HashUtil
 
 @Slf4j
 object TestC {
