@@ -19,12 +19,14 @@ import org.spongycastle.jce.spec.ECPrivateKeySpec
 import java.security.spec.ECParameterSpec
 import java.security.SignatureException
 
+@Deprecated
 case class KeyPair(
   val pubkey: String,
   val prikey: String,
   val address: String,
   val bcuid: String)
 
+@Deprecated
 object EncHelper {
 
   def newKeyPair(): KeyPair = {
