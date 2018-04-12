@@ -3,10 +3,8 @@ package org.fc.brewchain.bcapi.crypto
 import java.math.BigInteger
 import org.apache.commons.lang3.StringUtils
 import java.security.SecureRandom
-import org.brewchain.core.crypto.ECKey
-import org.spongycastle.util.encoders.Hex
 
-object BitMap {
+trait BitMap {
 
   private val StrMapping = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789".toCharArray();
   private val radix = StrMapping.length;
@@ -49,18 +47,6 @@ object BitMap {
     }
     v;
   }
-  def newKeyPair(): KeyPair = {
-
-    val ran = new SecureRandom();
-    //ran.generateSeed(System.currentTimeMillis().asInstanceOf[Int])
-    val eckey = new ECKey(ran);
-    return new KeyPair(
-      Hex.toHexString(eckey.getPubKey),
-      Hex.toHexString(eckey.getPrivKeyBytes),
-      Hex.toHexString(eckey.getAddress),
-      Hex.toHexString(eckey.getAddress));
-
-  }
 
   def mapToBigInt(strl: String): BigInt = {
     var bi: BigInt = BigInt(0);
@@ -72,6 +58,9 @@ object BitMap {
     bi
   }
 
+  
+}
+object test1 extends BitMap{
   def main(args: Array[String]): Unit = {
 
     val hexstr = "6647dccf7908a611dd50fa74548afd94164be77dcb9a7e455e8543c500ed7258";

@@ -1,11 +1,7 @@
 package org.fc.brewchain.bcapi.crypto
 
 import java.security.SecureRandom
-import org.brewchain.core.crypto.ECKey
-import org.spongycastle.util.encoders.Hex
 import onight.tfw.outils.serialize.SessionIDGenerator
-import org.brewchain.core.crypto.HashUtil
-import org.fc.brewchain.bcapi.crypto.BitMap
 import scala.BigInt
 import scala.math.BigInt.int2bigInt
 
@@ -46,38 +42,38 @@ object BCNodeHelper {
     }.toString()
   }
 
-  def nextUID(key: String = "BCC2018"): String = {
-    //    val id = UUIG.generate()
-    val ran = new SecureRandom(key.getBytes);
-    //ran.generateSeed(System.currentTimeMillis().asInstanceOf[Int])
-    val eckey = new ECKey(ran);
-    val encby = HashUtil.ripemd160(eckey.getPubKey);
-    //    println("hex=" + Hex.toHexString(encby))
-    val i = encby.foldLeft(BigInt(0))((a, b) => a * 0xFF + BigInt(Math.abs(b)));
-    //    println("i=" + i)
-    val id = BitMap.hexToMapping(i)
-    val mix = mixStr(id, key);
-    mix + SessionIDGenerator.genSum(mix)
-  }
-  def checkUID(str: String, key: String = "BCC2018"): Boolean = {
-    SessionIDGenerator.checkSum(str)
-  }
-  def main(args: Array[String]): Unit = {
-
-    val ostr = "hello world";
-    //    val hexstr = "100A";
-    val bstr = bytesEnc(ostr.getBytes)
-    println("bstr=" + bstr);
-    println("Hex::" + Hex.toHexString(ostr.getBytes));
-    val mixstr = mixStr(ostr, "abc");
-    println("Mix::" + mixstr);
-    println("DMix:" + decMixStr(mixstr, "abc"));
-    val strstr = new String(bytesDec(bstr))
-    //    println("oo:" + strstr + "::" + StringUtils.equals(strstr, ostr))
-    for (i <- 1 to 100) {
-      val uid = nextUID() + StrMapping(Math.abs(Math.random() * 10000 % radix).asInstanceOf[Int]);
-      println("nextUID==" + uid + ",check=" + checkUID(uid));
-
-    }
-  }
+//  def nextUID(key: String = "BCC2018"): String = {
+//    //    val id = UUIG.generate()
+//    val ran = new SecureRandom(key.getBytes);
+//    //ran.generateSeed(System.currentTimeMillis().asInstanceOf[Int])
+//    val eckey = new ECKey(ran);
+//    val encby = HashUtil.ripemd160(eckey.getPubKey);
+//    //    println("hex=" + Hex.toHexString(encby))
+//    val i = encby.foldLeft(BigInt(0))((a, b) => a * 0xFF + BigInt(Math.abs(b)));
+//    //    println("i=" + i)
+//    val id = BitMap.hexToMapping(i)
+//    val mix = mixStr(id, key);
+//    mix + SessionIDGenerator.genSum(mix)
+//  }
+//  def checkUID(str: String, key: String = "BCC2018"): Boolean = {
+//    SessionIDGenerator.checkSum(str)
+//  }
+//  def main(args: Array[String]): Unit = {
+//
+//    val ostr = "hello world";
+//    //    val hexstr = "100A";
+//    val bstr = bytesEnc(ostr.getBytes)
+//    println("bstr=" + bstr);
+////    println("Hex::" + Hex.toHexString(ostr.getBytes));
+//    val mixstr = mixStr(ostr, "abc");
+//    println("Mix::" + mixstr);
+//    println("DMix:" + decMixStr(mixstr, "abc"));
+//    val strstr = new String(bytesDec(bstr))
+//    //    println("oo:" + strstr + "::" + StringUtils.equals(strstr, ostr))
+//    for (i <- 1 to 100) {
+//      val uid = nextUID() + StrMapping(Math.abs(Math.random() * 10000 % radix).asInstanceOf[Int]);
+//      println("nextUID==" + uid + ",check=" + checkUID(uid));
+//
+//    }
+//  }
 }
