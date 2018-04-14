@@ -88,4 +88,6 @@ public interface EncAPI {
 	public boolean ecVerify(String pubKey, String content, byte[] r,byte[] s,  byte v);
 
 	public byte[] sha3Encode(byte[] input);
+	
+	public byte[] sha256Encode(byte[] input);
 }
