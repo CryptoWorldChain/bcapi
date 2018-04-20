@@ -11,13 +11,13 @@ public interface EncAPI {
 
 	public String ecSignHex(String priKey, byte[] contentHash);
 
-	public boolean ecVerify(String priKey, byte[] contentHash, byte[] sign);
+	public boolean ecVerify(String pubKey, byte[] contentHash, byte[] sign);
 
 	public String ecSignHex(String priKey, String hexHash);
 
-	public boolean ecVerifyHex(String priKey, String hexHash, String signhex);
+	public boolean ecVerifyHex(String pubKey, String hexHash, String signhex);
 
-	public boolean ecVerifyHex(String priKey, byte[] hexHash, String signhex);
+	public boolean ecVerifyHex(String pubKey, byte[] hexHash, String signhex);
 
 	public String base64Enc(byte[] data);
 
@@ -27,14 +27,10 @@ public interface EncAPI {
 
 	public byte[] hexDec(String data);
 	
-	public byte[] ecToAddress(byte[] contentHash, byte[] r,byte[] s,byte v);
 	public byte[] ecToAddress(byte[] contentHash, String signBase64);
 	
-	public byte[] ecToKeyBytes(byte[] contentHash, byte[] r,byte[] s,byte v);
 	public byte[] ecToKeyBytes(byte[] contentHash, String signBase64);
 	
-	public boolean ecVerify(String pubKey, String content, byte[] r,byte[] s,  byte v);
-
 	public byte[] sha3Encode(byte[] input);
 	
 	public byte[] sha256Encode(byte[] input);
