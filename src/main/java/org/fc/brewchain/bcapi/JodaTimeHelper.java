@@ -22,6 +22,10 @@ public class JodaTimeHelper {
 		return ""+Seconds.secondsBetween(new DateTime(time), new DateTime()).getSeconds();
 	}
 	
+	public static int secondIntFromNow(long time) {
+		return Seconds.secondsBetween(new DateTime(time), new DateTime()).getSeconds();
+	}
+	
 	public static void main(String[] args) {
 		long start=System.currentTimeMillis();
 		System.out.println(current());
