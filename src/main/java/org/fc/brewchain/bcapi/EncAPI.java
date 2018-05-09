@@ -2,6 +2,13 @@ package org.fc.brewchain.bcapi;
 
 public interface EncAPI {
 	public KeyPairs genKeys();
+	
+	/**
+	 * 创建地址
+	 * @param seed 助记词字符串
+	 * @return
+	 */
+	public KeyPairs genKeys(String seed);
 
 	public byte[] ecEncode(String pubKey, byte[] content);
 
