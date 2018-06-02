@@ -41,4 +41,6 @@ public interface EncAPI {
 	public byte[] sha3Encode(byte[] input);
 	
 	public byte[] sha256Encode(byte[] input);
+	
+	public String priKeyToAddress(String priKey);
 }
