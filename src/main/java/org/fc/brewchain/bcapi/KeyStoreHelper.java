@@ -81,9 +81,7 @@ public class KeyStoreHelper implements ActorService {
 
 		KeyStoreValue.Builder oKeyStoreValue = KeyStoreValue.newBuilder();
 		oKeyStoreValue.setAddress(address);
-		oKeyStoreValue.setPrivKey(privKey);
-		oKeyStoreValue.setPubKey("");
-		oKeyStoreValue.setBcuid("");
+		oKeyStoreValue.setBcuid(bcuid);
 		oKeyStoreFile.setCipherText(
 				encApi.hexEnc(encrypt(oKeyStoreValue.build().toByteArray(), cryptoKey, encApi.hexDec(iv))));
 
