@@ -10,9 +10,9 @@ public interface EncAPI {
 	 */
 	public KeyPairs genKeys(String seed);
 
-	public byte[] ecEncode(String pubKey, byte[] content);
-
-	public byte[] ecDecode(String priKey, byte[] content);
+//	public byte[] ecEncode(String pubKey, byte[] content);
+//
+//	public byte[] ecDecode(String priKey, byte[] content);
 
 	public byte[] ecSign(String priKey, byte[] contentHash);
 
@@ -34,9 +34,9 @@ public interface EncAPI {
 
 	public byte[] hexDec(String data);
 	
-	public byte[] ecToAddress(byte[] contentHash, String signBase64);
-	
-	public byte[] ecToKeyBytes(byte[] contentHash, String signBase64);
+//	public byte[] ecToAddress(byte[] contentHash, String signBase64);
+//	
+//	public byte[] ecToKeyBytes(byte[] contentHash, String signBase64);
 	
 	public byte[] sha3Encode(byte[] input);
 	
