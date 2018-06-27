@@ -39,7 +39,15 @@ import onight.tfw.ntrans.api.annotation.ActorRequire;
 public class KeyStoreHelper implements ActorService {
 	@ActorRequire(name = "bc_encoder", scope = "global")
 	EncAPI encApi;
-
+	
+	public KeyStoreHelper() {
+		  
+	 }
+	 
+	 public KeyStoreHelper(EncAPI encApi) {
+		 this.encApi = encApi;
+	 }
+	 
 	public KeyStoreValue getKeyStore(String keyStoreText, String pwd) {
 		// verify the pwd
 		KeyStoreFile oKeyStoreFile = parse(keyStoreText);
