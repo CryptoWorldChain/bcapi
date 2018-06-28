@@ -25,4 +25,6 @@ message OPair{
 message KeyStoreValue {
     string address = 1;
     string bcuid = 2;
+    string prikey = 3;
+    string pubkey = 4;
 }
