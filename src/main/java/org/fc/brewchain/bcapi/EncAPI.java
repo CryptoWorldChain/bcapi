@@ -121,9 +121,42 @@ public interface EncAPI {
 	 */
 	public byte[] hexDec(String data);
 	
+	/**
+	 * 通过签名获取地址
+	 * @param contentHash 签名之前的数据
+	 * @param sign 签名之后的数据
+	 * @return
+	 */
 	public byte[] ecToAddress(byte[] contentHash, String sign);
 	
+	/**
+	 * 通过签名获取公钥
+	 * @param contentHash 签名之前的数据
+	 * @param sign 签名之后的数据
+	 * @return
+	 */
 	public byte[] ecToKeyBytes(byte[] contentHash, String sign);
+
+	/**
+	 * 根据私钥计算地址
+	 * @param priKey
+	 * @return
+	 */
+	public String priKeyToAddress(String priKey);
+	
+	/**
+	 * 根据私钥计算公钥
+	 * @param priKey
+	 * @return
+	 */
+	public String priKeyToPubKey(String priKey);
+	
+	/**
+	 * 根据私钥计算地址、公钥
+	 * @param priKey
+	 * @return
+	 */
+	public KeyPairs priKeyToKey(String priKey);
 	
 	/**
 	 * byte[] 到 sha3 byte[]
@@ -139,10 +172,4 @@ public interface EncAPI {
 	 */
 	public byte[] sha256Encode(byte[] input);
 	
-	/**
-	 * 根据私钥计算地址
-	 * @param priKey
-	 * @return
-	 */
-	public String priKeyToAddress(String priKey);
 }
