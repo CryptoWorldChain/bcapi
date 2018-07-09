@@ -1,11 +1,14 @@
 package org.fc.brewchain.bcapi;
 
 import java.io.FileInputStream;
+import java.util.Locale;
 
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Seconds;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.DateTimeFormatterBuilder;
 
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
@@ -86,6 +89,10 @@ public class JodaTimeHelper {
 			System.out.println("dis=" + secondFromNow(start));
 			System.out.println("cur==" + System.currentTimeMillis());
 			System.out.println("cur==" + currentMills());
+			String pattern="'UTC--'yyyy-MM-dd'T'HH-mm-ss.sss'--'";
+			DateTimeFormatter dtf=DateTimeFormat.forPattern(pattern).withZoneUTC();
+			String strdate = dtf.print(System.currentTimeMillis());
+			System.out.println(strdate);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
