@@ -22,4 +22,15 @@ public class UnitUtil {
 	public static BigInteger toWei(BigInteger val) {
 		return val.multiply(unit);
 	}
+
+	public static int compareTo(String val1, String val2) throws NumberFormatException {
+		BigInteger biVal1 = new BigInteger(val1);
+		BigInteger biVal2 = new BigInteger(val2);
+
+		return compareTo(biVal1, biVal2);
+	}
+
+	public static int compareTo(BigInteger val1, BigInteger val2) {
+		return val1.compareTo(val2);
+	}
 }
