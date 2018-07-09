@@ -172,4 +172,6 @@ public interface EncAPI {
 	 */
 	public byte[] sha256Encode(byte[] input);
 	
+	
+	public boolean isReady();
 }
