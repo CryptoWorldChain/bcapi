@@ -25,6 +25,10 @@ public interface ODBSupport extends DomainDaoSupport{
 	 * @throws ODBException
 	 */
 	Future<OValue> put(OKey key, OValue value) throws ODBException;
+	
+	Future<OValue> putIfNotExist(OKey key, OValue value) throws ODBException;
+	Future<OValue[]> putIfNotExist(OKey[] key, OValue []value) throws ODBException;
+	
 	Future<OValue> put(String key, OValue value) throws ODBException;
 
 

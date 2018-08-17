@@ -92,6 +92,16 @@ public  class ODBDao implements ODBSupport {
 	public Future<OValue> put(String key, OValue value) throws ODBException {
 		return daosupport.put(key, value);
 	}
+	
+	@Override
+	public Future<OValue> putIfNotExist(OKey key, OValue value) throws ODBException {
+		return daosupport.putIfNotExist(key, value);
+	}
+	
+	@Override
+	public Future<OValue[]> putIfNotExist(OKey[] keys, OValue[] values) throws ODBException {
+		return daosupport.putIfNotExist(keys, values);
+	}
 	@Override
 	public Future<List<OPair>> listBySecondKey(String secondKey) throws ODBException {
 		return daosupport.listBySecondKey(secondKey);
