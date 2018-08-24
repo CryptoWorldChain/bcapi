@@ -71,8 +71,8 @@ object test1 extends BitMap{
     println("biequal::" + StringUtils.equalsIgnoreCase(bi.toString(16), hexstr) + ":len=" + hexstr.length() + "==>" + bi.bitCount())
     val bix = hexToMapping(bi);
     println("bix::" + bix);
-    val bistr = mapToBigInt("rcsiHZXq2BzAS86xBKwhdJsiK5pzRSggZgKLoqj");
-    println("bistr=" + bistr.toString(16));
+    val bistr = mapToBigInt("oIkuZcNEF1JgYmrYClTNWZEtUUy7GOUOuDfP9vC7brz");
+    println("bistr=" + bistr.toString(16)+",count="+bistr.bitCount);
     println("biequal::" + StringUtils.equals(bistr.toString(16), (hexstr)) + ":len=" + hexstr.length())
 
     val bihexstr = mapToBigInt(hexstr);
